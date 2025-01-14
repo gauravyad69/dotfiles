@@ -4,31 +4,40 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
-    # home-manager = {
-    #   url = "github:nix-community/home-manager";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-  };
-
-  outputs = { self, nixpkgs, ... }:
-  let
-    lib = nixpkgs.lib;
-  in  {
-    nixosConfigurations = {
-
-      default = lib.nixosSystem {
-
-        system = "x86_64-linux";
-
-        specialArgs = {inherit inputs;};
-
-        modules = [
-          ./configuration.nix
-          # inputs.home-manager.nixosModules.default
-        ];
-
-
-      };
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
+    let
+      lib = nixpkgs.lib;
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
+    in
+    {
+      nixosConfigurations = {
+        nixos = lib.nixosSystem {
+          inherit system;
+          #specialArgs = {inherit inputs;};
+          modules = [ ./configuration.nix ];
+        };
+      };
+
+      homeConfigurations = {
+        mrhell = home-manager.lib.homeManagerConfiguration {
+          #specialArgs = {inherit inputs;};
+          inherit pkgs;
+          modules = [ ./home-manager/home.nix ];
+        };
+      };
+
+    };
 }

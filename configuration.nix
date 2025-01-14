@@ -119,8 +119,8 @@
     #aria2
     #gparted
     #gcc
-    #git
-    #gh
+    git
+    gh
     #gitkraken
     #rustup
     #docker
