@@ -14,6 +14,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  #limit the number of generations to 3
+  boot.loader.systemd-boot.configurationLimit = 3;
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -70,9 +73,6 @@
   };
 
 
-  #limit the number of generations to 3
-  boot.loader.systemd-boot.configurationLimit = 3;
-
 
   # Enable CUPS to print documents.
   # Enable CUPS for printing
@@ -122,6 +122,12 @@
     #  thunderbird
     ];
   };
+
+    nix.extraOptions = ''
+        trusted-users = root mrhell
+    '';
+
+
 
   # Install firefox.
   programs.firefox.enable = true;
