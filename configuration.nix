@@ -21,6 +21,10 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -112,32 +116,32 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     htop
-    aria2
-    gparted
-    gcc
-    git
-    gh
-    gitkraken
-    rustup
-    docker
-    curl
-    nmap
+    #aria2
+    #gparted
+    #gcc
+    #git
+    #gh
+    #gitkraken
+    #rustup
+    #docker
+    #curl
+    #nmap
     tmux
     neofetch
-    glances
-    noto-fonts
-    code-cursor
-    android-studio-full
-    gimp
-    vlc
-    vscode
-    jetbrains.idea-ultimate
+    #glances
+    #noto-fonts
+    #code-cursor
+    #android-studio-full
+    #gimp
+    #vlc
+    #vscode
+    #jetbrains.idea-ultimate
     neovim
-    python3
-    ffmpeg
-    spotify
-    nodejs
-    canon-capt
+    #python3
+    #ffmpeg
+    #spotify
+    #nodejs
+    #canon-capt
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
