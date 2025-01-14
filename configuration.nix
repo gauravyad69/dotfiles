@@ -28,11 +28,12 @@
   # Enable zsh
   environment.shells = with pkgs; [zsh];
   users.defaultUserShell = pkgs.zsh;
+
   programs.zsh={
   enable = true;
+  promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
      ohMyZsh = {
           enable = true;
-          theme = "robbyrussell";
 #           plugins = [
 #             "sudo"
 #             "terraform"
@@ -161,6 +162,7 @@
     #spotify
     #nodejs
     #canon-capt
+    zsh-powerlevel10k
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
