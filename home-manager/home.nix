@@ -1,6 +1,16 @@
 { config, pkgs, ... }:
 
+let
+  androidSdkModule = import ((builtins.fetchGit {
+    url = "https://github.com/tadfisher/android-nixpkgs.git";
+    ref = "stable";  # Or "stable", "beta", "preview", "canary"
+  }) + "/hm-module.nix");
+
+in
 {
+
+
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "mrhell";
@@ -14,6 +24,23 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "24.11"; # Please read the comment before changing.
+
+
+
+  imports = [ androidSdkModule ];
+  android-sdk.enable = true;
+
+  # Optional; default path is "~/.local/share/android".
+#   android-sdk.path = "${config.home.homeDirectory}/.android/sdk";
+
+  android-sdk.packages = sdkPkgs: with sdkPkgs; [
+    build-tools-34-0-0
+    cmdline-tools-latest
+    emulator
+    platforms-android-34
+    sources-android-34
+  ];
+
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
