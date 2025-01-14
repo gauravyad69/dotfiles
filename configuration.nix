@@ -25,6 +25,25 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
 
+  # Enable zsh
+  environment.shells = with pkgs; [zsh];
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh={
+  enable = true;
+     ohMyZsh = {
+          enable = true;
+          theme = "robbyrussell";
+#           plugins = [
+#             "sudo"
+#             "terraform"
+#             "systemadmin"
+#             "vi-mode"
+#           ];
+        };
+  };
+
+
+
   # Enable networking
   networking.networkmanager.enable = true;
 

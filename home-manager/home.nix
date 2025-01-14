@@ -71,6 +71,24 @@
     # EDITOR = "emacs";
   };
 
+ programs.zsh = {
+    enable=true;
+    shellAliases={
+      "ll" = "ls -l";
+    };
+    autocd = true;
+    ohMyZsh = {
+          enable = true;
+          theme = "robbyrussell";
+#           plugins = [
+#             "sudo"
+#             "terraform"
+#             "systemadmin"
+#             "vi-mode"
+#           ];
+        };
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
