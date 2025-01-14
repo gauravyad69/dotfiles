@@ -20,8 +20,7 @@
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    # pkgs.hello
-
+    pkgs.hello
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -71,24 +70,13 @@
     # EDITOR = "emacs";
   };
 
- programs.zsh = {
-    enable=true;
+  programs.zsh={
     shellAliases={
       "ll" = "ls -l";
-    };
-    autocd = true;
-    ohMyZsh = {
-          enable = true;
-          theme = "robbyrussell";
-#           plugins = [
-#             "sudo"
-#             "terraform"
-#             "systemadmin"
-#             "vi-mode"
-#           ];
-        };
+  };
+  autocd = true;
   };
 
-  # Let Home Manager install and manage itself.
+# Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

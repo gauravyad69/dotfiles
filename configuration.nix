@@ -44,7 +44,8 @@
   };
 
 
-
+  #Enable bluetooth
+  hardware.bluetooth.enable=true;
   # Enable networking
   networking.networkmanager.enable = true;
 
