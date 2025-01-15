@@ -81,7 +81,6 @@
 
   programs.hyprland = {
     enable=true;
-    nvidiaPatches = true;
     xwayland.enable=true; 
 };
 
@@ -125,7 +124,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -204,7 +203,7 @@ xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
     swww
     kitty
     rofi-wayland
-    (pkgs.waybar.overrideAttrs (oldAttrs:{mesonFlags=oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]}))
+    (pkgs.waybar.overrideAttrs (oldAttrs:{mesonFlags=oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];}))
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
