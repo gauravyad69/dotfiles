@@ -41,7 +41,19 @@
           #specialArgs = {inherit inputs;};
           inherit pkgs;
           modules = [ ./home.nix
-          ];
+           {
+              imports = [ android-nixpkgs.hmModule ];
+              android-sdk.enable = true;
+              android-sdk.path = "/home/mrhell/.android/sdk";
+              android-sdk.packages = sdk: with sdk; [
+                build-tools-34-0-0
+                cmdline-tools-latest
+                platforms-android-34
+                sources-android-34
+              ];
+            } 
+
+	 ];
         };
       };
 

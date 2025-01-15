@@ -1,9 +1,28 @@
 { config, pkgs, ... }:
 
+let
+  androidSdkModule = import ((builtins.fetchGit {
+    url = "https://github.com/tadfisher/android-nixpkgs.git";
+    ref = "stable";  # Or "stable", "beta", "preview", "canary"
+  }) + "/hm-module.nix");
 
+in
 {
 
 
+  imports = [ androidSdkModule ];
+
+  android-sdk.enable = true;
+
+  # Optional; default path is "~/.local/share/android".
+  android-sdk.path = "${config.home.homeDirectory}/.android/sdk";
+
+  android-sdk.packages = sdkPkgs: with sdkPkgs; [
+    build-tools-34-0-0
+    cmdline-tools-latest
+    platforms-android-34
+    sources-android-34
+  ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -29,6 +48,7 @@
     pkgs.hello
     pkgs.android-studio
     pkgs.telegram-desktop
+    pkgs.android-tools 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
