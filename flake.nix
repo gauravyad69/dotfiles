@@ -40,7 +40,7 @@
         mrhell = home-manager.lib.homeManagerConfiguration {
           #specialArgs = {inherit inputs;};
           inherit pkgs;
-          modules = [ ./home-manager/home.nix
+          modules = [ ./home.nix
           ];
         };
       };
