@@ -33,6 +33,11 @@
 
   programs.zsh={
   enable = true;
+  shellAliases={
+      "ll" = "ls -l";
+      "snrs" = "cd /home/mrhell/dotfiles/ && sudo nixos-rebuild switch --flake .";
+      "hms" = "cd /home/mrhell/dotfiles/ && home-manager switch --flake .";
+  };
   promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
      ohMyZsh = {
           enable = true;

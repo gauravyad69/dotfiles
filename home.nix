@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  # Home Manager needs a bit of information about you and the paths it should
+ # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "mrhell";
   home.homeDirectory = "/home/mrhell";
@@ -25,6 +25,7 @@
     pkgs.android-studio
     pkgs.telegram-desktop
     pkgs.android-tools 
+    pkgs.discord
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -74,15 +75,6 @@
     # EDITOR = "emacs";
   };
 
-  programs.zsh={
-    enable = true; 
-    shellAliases={
-      "ll" = "ls -l";
-      "snrs" = "cd /home/mrhell/dotfiles/ && sudo nixos-rebuild switch --flake .";
-      "hms" = "cd /home/mrhell/dotfiles/ && home-manager switch --flake .";
-  };
-  autocd = true;
-  };
 
 # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
