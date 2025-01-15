@@ -79,6 +79,22 @@
     variant = "";
   };
 
+  programs.hyprland = {
+    enable=true;
+    nvidiaPatches = true;
+    xwayland.enable=true; 
+};
+
+ environment.sessionVariables = {
+  #WLR_NO_HARDWARE_CURSORS = "1"; 
+  #hint electron apps to use wayland
+  NIXOS_OZONE_WL = "1";
+ };
+
+  hardware = {
+	opengl.enable = true;
+	nvidia.modesetting.enable = true;
+  };
 
 
   # Enable CUPS to print documents.
@@ -142,6 +158,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+##for hyprland
+xdg.portal.enable = true;
+xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   #Accept android licenses for android studio
   nixpkgs.config.android_sdk.accept_license = true;
@@ -178,6 +197,14 @@
     #nodejs
     #canon-capt
     zsh-powerlevel10k
+    waybar
+    eww
+    dunst
+    libnotify
+    swww
+    kitty
+    rofi-wayland
+    (pkgs.waybar.overrideAttrs (oldAttrs:{mesonFlags=oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]}))
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
