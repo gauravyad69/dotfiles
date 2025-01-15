@@ -79,6 +79,7 @@
   };
 
   programs.zsh={
+    enable = true; 
     shellAliases={
       "ll" = "ls -l";
       "snrs" = "cd /home/mrhell/dotfiles/ && sudo nixos-rebuild switch --flake .";

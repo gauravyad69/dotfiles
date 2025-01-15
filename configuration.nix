@@ -49,7 +49,6 @@
 
   #Enable adb and add it to the group so that it doesn't use sudo
   programs.adb.enable = true;
-  users.users.<mrhell>.extraGroups = [ "adbusers" ];
 
   #Enable bluetooth
   hardware.bluetooth.enable=true;
@@ -120,7 +119,7 @@
   users.users.mrhell = {
     isNormalUser = true;
     description = "mrhell";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" ];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
