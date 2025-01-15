@@ -11,6 +11,8 @@
 
   networking.hostName = hostname;
 
+#  services.xserver.displayManager.lightdm.enable=true;
+
   system.stateVersion = stateVersion;
 }
 

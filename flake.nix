@@ -24,7 +24,7 @@
     homeStateVersion = "24.11";
     user = "mrhell";
     hosts = [
-      { hostname = "ideapad_ikb14"; stateVersion = "24.11"; }
+      { hostname = "nixos"; stateVersion = "24.11"; }
     ];
 
     makeSystem = { hostname, stateVersion }: nixpkgs.lib.nixosSystem {
