@@ -27,7 +27,6 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-
   # Enable zsh
   environment.shells = with pkgs; [zsh];
   users.defaultUserShell = pkgs.zsh;
@@ -137,6 +136,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
 
   #Accept android licenses for android studio
   nixpkgs.config.android_sdk.accept_license = true;
