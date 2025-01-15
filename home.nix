@@ -1,27 +1,5 @@
 { config, pkgs, ... }:
-let
-  androidSdkModule = import ((builtins.fetchGit {
-    url = "https://github.com/tadfisher/android-nixpkgs.git";
-    ref = "stable";  # Or "stable", "beta", "preview", "canary"
-  }) + "/hm-module.nix");
-
-in
 {
-
-  imports = [ android-sdk ];
-
-  android-sdk.enable = true;
-
-  # Optional; default path is "~/.local/share/android".
-  android-sdk.path = "${config.home.homeDirectory}/.android/sdk";
-
-  android-sdk.packages = sdk: with sdk; [
-    build-tools-30-0-2
-    cmdline-tools-latest
-    platforms-android-30
-    sources-android-30
-  ];
-
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "mrhell";
