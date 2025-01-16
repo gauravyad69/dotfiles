@@ -36,9 +36,8 @@
 
         "hyprland/language" = {
           format-en = "🇺🇸";
-          format-ru = "🇷🇺";
-          format-he = "🇮🇱";
-          min-length = 5;
+          format-np = "NP";
+	  min-length = 5;
           tooltip = false;
         };
 
@@ -48,7 +47,14 @@
           interval = 300;
           class = "weather";
         };
-
+	"network" = {
+	  format-wifi = " {signalStrength}%";
+    	  format-ethernet = " 󰈀 ";
+    	  tooltip-format = "{essid} - {ifname} via {gwaddr}";
+    	  format-linked = "{ifname} (No IP)";
+    	  format-disconnected = "⚠";
+    	  format-alt = "{ifname}:{essid} {ipaddr}/{cidr}";
+	}; 
         "pulseaudio" = {
           format = "{icon} {volume}%";
           format-bluetooth = "{icon} {volume}% ";

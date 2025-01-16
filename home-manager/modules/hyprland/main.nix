@@ -60,8 +60,11 @@
       };
 
       input = {
-        kb_layout = "us,ru,il";
-        kb_options = "grp:caps_toggle";
+        kb_layout = "us,np";
+        kb_options = "grp:alt_shift_toggle,caps:swapescape";
+      	touchpad = {
+          natural_scroll = true;
+        };
       };
 
       gestures = {

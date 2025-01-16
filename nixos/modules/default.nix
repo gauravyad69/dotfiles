@@ -14,5 +14,10 @@
     ./timezone.nix
     ./user.nix
     ./zram.nix
+    ./battery.nix
+
+
+
+
   ];
 }

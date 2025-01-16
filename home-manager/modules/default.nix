@@ -18,5 +18,12 @@
     ./wofi
     ./zathura.nix
     ./zsh.nix
-  ];
+    ./firefox.nix
+    ./java.nix
+    ./aria2.nix
+
+
+
+
+];
 }

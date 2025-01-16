@@ -1,0 +1,35 @@
+{
+  #networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    ensureProfiles.profiles = {
+      home-wifi = {
+        connection = {
+	  id = "ULTRAFI_5Ghz";
+	  permissions = "";
+	  type = "wifi";
+	};
+	ipv4 = {
+	  dns-search = "";
+	  method = "auto";
+	};
+	ipv6 = {
+	addr-gen-mode = "stable-privacy";
+	dns-search = "";
+	method = "auto";
+        };
+	wifi = {
+	  mac-address-blacklist = "";
+	  mode = "infrastructure";
+	  ssid = "ULTRAFI_5Ghz";
+	};
+	wifi-security = {
+	  auth-alg = "open";
+	  key-mgmt =  "wpa2";
+	  psk = "gaurav12346";
+	};
+	      
+      };
+    };
+  }; 
+}

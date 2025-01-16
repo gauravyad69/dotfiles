@@ -13,8 +13,9 @@
     #teams-for-linux
     telegram-desktop
     vesktop
-
+    
     # CLI utils
+    powertop
     bottom
     brightnessctl
     cliphist
@@ -39,12 +40,16 @@
     wtype
     yt-dlp
     zip
+    gh
 
+    
     # Coding stuff
     nodejs
     python311
     android-tools
     android-studio
+    code-cursor
+
 
     # WM stuff
     libsForQt5.xwaylandvideobridge
