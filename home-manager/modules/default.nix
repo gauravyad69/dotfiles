@@ -4,10 +4,10 @@
     ./bat.nix
     ./chromium.nix
     ./eza.nix
-    ./git.nix
+#    ./git.nix
     ./hyprland
     ./lazygit.nix
-    ./neovim.nix
+    ./neovim/neovim.nix
     ./obsidian.nix
     ./ranger.nix
     ./starship.nix

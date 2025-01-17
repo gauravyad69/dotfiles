@@ -10,11 +10,13 @@
     #obs-studio
     #obsidian
     #prismlauncher-unwrapped
-    #teams-for-linux
+
+    gitkraken
     telegram-desktop
     vesktop
-    
+    vlc    
     # CLI utils
+    fzy
     powertop
     bottom
     brightnessctl
@@ -40,16 +42,18 @@
     wtype
     yt-dlp
     zip
-    gh
-
-    
     # Coding stuff
     nodejs
     python311
     android-tools
     android-studio
     code-cursor
-
+    go
+    julia
+    python311Packages.pip
+    php
+    luarocks
+  
 
     # WM stuff
     libsForQt5.xwaylandvideobridge
@@ -60,5 +64,10 @@
     # Other
     bemoji
     nix-prefetch-scripts
+
+    #this is for neovim, lsp
+    nil
+    kotlin-language-server
+
   ];
 }
