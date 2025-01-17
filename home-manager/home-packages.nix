@@ -10,7 +10,7 @@
     #obs-studio
     #obsidian
     #prismlauncher-unwrapped
-
+    gparted
     gitkraken
     telegram-desktop
     vesktop

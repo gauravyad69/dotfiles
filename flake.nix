@@ -11,7 +11,7 @@
     };
 
     stylix.url = "github:danth/stylix";
-
+    nvf.url = "github:notashelf/nvf";
     # COMING SOON...
     #nixvim = {
     #  url = "github:nix-community/nixvim";
@@ -19,7 +19,7 @@
     #};
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: let
+  outputs = { self, nixpkgs, home-manager, nvf, ... }@inputs: let
     system = "x86_64-linux";
     homeStateVersion = "24.11";
     user = "mrhell";
@@ -39,6 +39,12 @@
     };
 
   in {
+
+    packages.${system}.default = (nvf.lib.neovimConfiguration{
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [./hosts/nixos/nvf-configuration.nix];
+    }).neovim;
+
     nixosConfigurations = nixpkgs.lib.foldl' (configs: host:
       configs // {
         "${host.hostname}" = makeSystem {
@@ -53,6 +59,7 @@
       };
 
       modules = [
+        nvf.homeManagerModules.default
         ./home-manager/home.nix
       ];
     };
