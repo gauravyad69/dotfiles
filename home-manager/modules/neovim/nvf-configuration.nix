@@ -1,7 +1,7 @@
-{pkgs, libs, ...}:
 {
   programs.nvf = {
     enable = true;
+    
     settings.vim = {
       globals.mapleader = ''\'';
       viAlias = false;
@@ -11,9 +11,11 @@
       telescope.enable = true;
       autocomplete.nvim-cmp.enable = true;
       statusline.lualine.enable=true; 
+
       lsp = {
         enable = true;
       };
+      
       theme = {
         enable = true;
         name = "gruvbox";
@@ -23,11 +25,12 @@
         enableLSP = true;
         enableFormat = true;
         enableTreesitter = true;
-        
+
         kotlin.enable = true;
         lua.enable = true;
         nix.enable = true;
-       };
+        python.enable = true;
+      };
     };
     #statusline.lualine.enable = true;
     #    vim.telescope.enable = true;

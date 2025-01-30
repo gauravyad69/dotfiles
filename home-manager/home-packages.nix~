@@ -63,6 +63,7 @@
     # Coding stuff
     nodejs
     python311
+    android-tools
     android-studio
     code-cursor
     go

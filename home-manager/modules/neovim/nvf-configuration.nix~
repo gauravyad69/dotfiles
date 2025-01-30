@@ -3,7 +3,7 @@
   programs.nvf = {
     enable = true;
     settings.vim = {
-      globals.mapleader = \;
+      globals.mapleader = ''\'';
       viAlias = false;
       vimAlias = true;
       

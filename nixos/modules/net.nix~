@@ -1,9 +1,7 @@
 {
 networking = {
-
     networkmanager = {
       enable = false;
-      wifi.backend = "iwd";
     };
  
 
@@ -37,7 +35,6 @@ networking = {
         IPv4 = {
           Gateway = "192.168.0.1";
           Address = "192.168.0.8";
-          Netmask = "255.255.255.0";
         };
         IPv6 = {
             Enabled = false;

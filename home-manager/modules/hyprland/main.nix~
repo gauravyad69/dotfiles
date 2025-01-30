@@ -5,11 +5,11 @@
      extraConfig = ''
       device {
         name=msft0001:01-06cb:7f27-mouse
-        sensitivity=0.4
+        sensitivity=0.5
       }
       device {
         name=msft0001:01-06cb:7f27-touchpad
-        sensitivity=0.4
+        sensitivity=0.5
       }
     '';
     settings = {
