@@ -15,7 +15,7 @@
     ./user.nix
     ./zram.nix
     ./battery.nix
-    ./printer.nix
+
 
 
 

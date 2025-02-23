@@ -1,5 +1,7 @@
 { pkgs, user, ... }: {
   programs.zsh.enable = true;
+programs.steam.enable = true;
+
   programs.adb.enable = true;
   users = {
     defaultUserShell = pkgs.zsh;

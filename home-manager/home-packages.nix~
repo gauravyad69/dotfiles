@@ -8,6 +8,16 @@
     dawnTime = "06:28";
   };
 
+  #   services.printing = {
+  #  enable = true;
+  #   drivers = with pkgs; [ gutenprint  canon-cups-ufr2 splix ];
+
+  #  };
+
+
+
+  #    services.system-config-printer.enable = true;
+
   home.packages = with pkgs; [
     # Packages in each category are sorted alphabetically
 
@@ -23,6 +33,7 @@
     vesktop
     vlc    
     postman
+    figma-linux
     libreoffice-still
 
     # CLI utils
@@ -53,7 +64,7 @@
     yt-dlp
     zip
     pipenv
-
+    unrar
 
 
 
@@ -63,7 +74,6 @@
     # Coding stuff
     nodejs
     python311
-    android-tools
     android-studio
     code-cursor
     go
@@ -72,7 +82,7 @@
     php
     luarocks
     jetbrains.idea-ultimate 
-
+    jetbrains.webstorm
     # WM stuff
     libsForQt5.xwaylandvideobridge
     libnotify

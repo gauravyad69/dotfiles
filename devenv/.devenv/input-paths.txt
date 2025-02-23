@@ -1,3 +1,0 @@
-/home/mrhell/dotfiles/devenv/devenv.lock
-/home/mrhell/dotfiles/devenv/devenv.nix
-/home/mrhell/dotfiles/devenv/devenv.yaml

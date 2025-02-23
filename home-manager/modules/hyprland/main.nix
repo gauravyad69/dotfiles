@@ -10,7 +10,16 @@
       device {
         name=msft0001:01-06cb:7f27-touchpad
         sensitivity=0.4
-      }
+      } 
+      device {
+        name=razer-razer-deathadder-essential-keyboard-1
+        sensitivity=0.4
+    }
+      device {
+        name=razer-razer-deathadder-essential-1
+        sensitivity=0.4
+    }
+ 
     '';
     settings = {
       env = [

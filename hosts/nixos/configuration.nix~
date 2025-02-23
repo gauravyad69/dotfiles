@@ -10,8 +10,7 @@
   environment.systemPackages = [ pkgs.home-manager ];
 
   networking.hostName = hostname;
- nixpkgs.config.allowUnfree = true; 
- 
+
 #  services.xserver.displayManager.lightdm.enable=true;
 
   system.stateVersion = stateVersion;

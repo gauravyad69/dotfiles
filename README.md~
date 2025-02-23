@@ -3,9 +3,9 @@
 Welcome to my redesigned NixOS configuration built for efficiency and aesthetics. Right now I'm trying to commit something everyday. Let's see how long I can go.
 
 ![screenshot](./screenshots/screenshot1.png)
-## Use commands
-home-manager switch --flake ~/dotfiles/.
-sudo nixos-rebuild switch --flake ~/dotfiles/.
+
+You can still find my old configuration [here](https://github.com/Andrey0189/nixos-config)
+
 ## ✨ Features
 
 - 🖥️ **Multiple Hosts Support**: Easy to configure for different hosts.
