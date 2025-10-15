@@ -1,0 +1,114 @@
+* {
+    bg-primary:     #1a1b26;
+    bg-secondary:   #24283b;
+    bg-selected:    rgba(123, 162, 247, 0.2);
+    fg-primary:     #c0caf5;
+    fg-secondary:   #9aa5ce;
+    fg-selected:    #ffffff;
+    border-color:   rgba(123, 162, 247, 0.3);
+    accent:         #7aa2f7;
+    
+    background-color: transparent;
+    text-color: @fg-primary;
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    width: 800px;
+    background-color: @bg-primary;
+    border: 1px solid;
+    border-color: rgba(123, 162, 247, 0.15);
+    border-radius: 16px;
+    padding: 12px;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ inputbar, listview ];
+    spacing: 8px;
+}
+
+inputbar {
+    background-color: @bg-secondary;
+    text-color: @fg-primary;
+    border-radius: 8px;
+    padding: 12px 16px;
+    children: [ prompt, entry ];
+    spacing: 8px;
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @accent;
+    font: "JetBrainsMono Nerd Font Bold 11";
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg-primary;
+    placeholder: "Search...";
+    placeholder-color: rgba(192, 202, 245, 0.5);
+    cursor: text;
+}
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 8;
+    cycle: false;
+    dynamic: true;
+    scrollbar: true;
+    spacing: 4px;
+}
+
+scrollbar {
+    width: 8px;
+    background-color: transparent;
+    handle-color: @border-color;
+    handle-width: 8px;
+    border-radius: 4px;
+}
+
+element {
+    background-color: rgba(65, 72, 104, 0.1);
+    text-color: @fg-primary;
+    border-radius: 6px;
+    padding: 8px 12px;
+    spacing: 8px;
+}
+
+element normal.normal {
+    background-color: rgba(65, 72, 104, 0.1);
+    text-color: @fg-primary;
+}
+
+element normal.active {
+    background-color: rgba(65, 72, 104, 0.1);
+    text-color: @accent;
+}
+
+element selected.normal, element selected.active {
+    background-color: @bg-selected;
+    text-color: @fg-selected;
+    border: 1px solid;
+    border-color: @accent;
+}
+
+element-icon {
+    background-color: transparent;
+    size: 24px;
+    cursor: pointer;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    cursor: pointer;
+    vertical-align: 0.5;
+}
+
+element-text selected {
+    text-color: @fg-selected;
+}

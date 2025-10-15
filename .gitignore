@@ -1,0 +1,14 @@
+# Editor files
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+
+# Secrets (if you add any)
+*secret*
+*password*
+*.key
+*.pem

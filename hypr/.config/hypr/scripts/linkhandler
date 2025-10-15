@@ -1,0 +1,47 @@
+#!/bin/bash
+
+extract_filename() {
+  local url="$1"
+  local base_filename=$(basename "$url" | cut -d'?' -f1)
+  echo "$base_filename"
+}
+
+download_and_open_image() {
+  local url="$1"
+  local filename=$(extract_filename "$url")
+
+  echo "Downloading image from URL: $url"
+
+  curl -sL "$url" | imv - >/dev/null 2>&1 &
+
+  if [ $? -ne 0 ]; then
+    echo "Failed to download or open image: $url"
+  fi
+}
+open_video_or_file() {
+  local url="$1"
+  case "$url" in
+    *mkv*|*webm*|*mp4*|*rumble.com*|*youtube.com/watch*|*youtube.com/playlist*|*youtube.com/shorts*|*youtu.be*|*hooktube.com*|*bitchute.com*|*videos.lukesmith.xyz*|*odysee.com*)
+   setsid -f mpv -quiet "$url" >/dev/null 2>&1 ;;  
+    *)
+      if [ -f "$url" ]; then
+        setsid -f "$TERMINAL" -e "$EDITOR" "$url" >/dev/null 2>&1
+      else
+        setsid -f "$BROWSER" "$url" >/dev/null 2>&1
+      fi
+      ;;
+  esac
+}
+
+echo "Processing URL: $1"
+
+url="$1"
+
+case "$url" in
+  *png*|*jpg*|*jpe*|*jpeg*|*gif*)
+    download_and_open_image "$url"
+    ;;
+  *)
+    open_video_or_file "$url"
+    ;;
+esac
