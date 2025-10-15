@@ -33,8 +33,8 @@ read -p "Enter your GitHub username: " username
 read -p "Enter repository name (default: dotfiles): " repo_name
 repo_name=${repo_name:-dotfiles}
 
-# Add remote
-REPO_URL="https://github.com/$username/$repo_name.git"
+# Add remote with SSH
+REPO_URL="git@github.com:$username/$repo_name.git"
 git remote add origin "$REPO_URL"
 
 echo ""
@@ -49,5 +49,5 @@ echo "  2. Push your dotfiles:"
 echo "     cd ~/dotfiles"
 echo "     git push -u origin main"
 echo ""
-echo -e "${BLUE}💡 Alternative (SSH):${NC}"
-echo "  git remote set-url origin git@github.com:$username/$repo_name.git"
+echo -e "${BLUE}💡 Alternative (HTTPS):${NC}"
+echo "  git remote set-url origin https://github.com/$username/$repo_name.git"
