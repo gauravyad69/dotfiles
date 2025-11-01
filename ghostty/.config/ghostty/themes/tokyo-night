@@ -1,0 +1,48 @@
+# Tokyo Night Theme for Ghostty
+
+background = #1a1b26
+foreground = #c0caf5
+cursor-color = #c0caf5
+selection-background = #33467c
+selection-foreground = #c0caf5
+
+#palette = [
+  # Normal colors
+  #0  black
+  #1  red
+  #2  green
+  #3  yellow
+  #4  blue
+  #5  magenta
+  #6  cyan
+  #7  white
+  # Bright colors
+  #8  bright black
+  #9  bright red
+  #10 bright green
+  #11 bright yellow
+  #12 bright blue
+  #13 bright magenta
+  #14 bright cyan
+  #15 bright white
+  #16-255 can be customized as needed
+  # Normal colors
+  #0
+  #1
+  #2
+  #3
+  #4
+  #5
+  #6
+  #7
+  # Bright colors
+  #8
+  #9
+  #10
+  #11
+  #12
+  #13
+  #14
+  #15
+#]
+

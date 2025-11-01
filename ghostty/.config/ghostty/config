@@ -1,0 +1,31 @@
+# Font settings
+font-family = JetBrainsMono NF
+font-family-bold = JetBrainsMono NF
+font-family-italic = JetBrainsMono NF
+font-family-bold-italic = JetBrainsMono NF
+font-size = 12
+
+font-style = ExtraBold
+font-style-italic = Bold Italic
+
+# Window appearance
+background-opacity = 1.0
+window-padding-x = 15
+window-padding-y = 15
+#window-decorations = none
+#dynamic-title = true
+
+confirm-close-surface=false
+
+cursor-style = block
+cursor-style-blink = false
+
+theme = tokyo-night
+
+
+# Terminal environment
+term = xterm-256color
+
+# Bell settings
+#bell-command = paplay /usr/share/sounds/freedesktop/stereo/dialog-error.oga
+
